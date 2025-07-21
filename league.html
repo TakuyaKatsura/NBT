@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地域リーグ戦 - 西宮甲山HEROES</title>
+    <link rel="stylesheet" href="enhanced-styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>西宮甲山HEROES</h1>
+                <p>NextBaseballTeams</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">トップページ</a></li>
+                <li><a href="activities.html">活動記録</a></li>
+                <li><a href="membership.html">会員制度</a></li>
+                <li><a href="league.html" class="active">地域リーグ戦</a></li>
+                <li><a href="news.html">ニュース</a></li>
+                <li><a href="sponsors.html">スポンサー募集</a></li>
+                <li><a href="contact.html">問合せ・リンク</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>地域リーグ戦</h1>
+                <p>試合スケジュールと結果をお知らせします</p>
+            </div>
+        </section>
+
+        <section class="league-content">
+            <div class="container">
+                <div class="league-tabs">
+                    <button class="tab-btn active" data-tab="schedule">試合スケジュール</button>
+                    <button class="tab-btn" data-tab="results">試合結果</button>
+                    <button class="tab-btn" data-tab="standings">順位表</button>
+                </div>
+
+                <div class="tab-content active" id="schedule">
+                    <h2>今後の試合予定</h2>
+                    <div class="schedule-list">
+                        <div class="match-item upcoming">
+                            <div class="match-date">
+                                <span class="month">2月</span>
+                                <span class="day">15</span>
+                                <span class="time">09:00</span>
+                            </div>
+                            <div class="match-info">
+                                <h3>春季リーグ第1戦</h3>
+                                <p class="teams">西宮甲山HEROES vs 尼崎イーグルス</p>
+                                <p class="venue">甲山球場</p>
+                            </div>
+                            <div class="match-status">
+                                <span class="status upcoming">予定</span>
+                            </div>
+                        </div>
+
+                        <div class="match-item upcoming">
+                            <div class="match-date">
+                                <span class="month">2月</span>
+                                <span class="day">22</span>
+                                <span class="time">13:00</span>
+                            </div>
+                            <div class="match-info">
+                                <h3>春季リーグ第2戦</h3>
+                                <p class="teams">芦屋ライオンズ vs 西宮甲山HEROES</p>
+                                <p class="venue">芦屋市民球場</p>
+                            </div>
+                            <div class="match-status">
+                                <span class="status upcoming">予定</span>
+                            </div>
+                        </div>
+
+                        <div class="match-item upcoming">
+                            <div class="match-date">
+                                <span class="month">3月</span>
+                                <span class="day">1</span>
+                                <span class="time">10:00</span>
+                            </div>
+                            <div class="match-info">
+                                <h3>春季リーグ第3戦</h3>
+                                <p class="teams">西宮甲山HEROES vs 神戸ファイターズ</p>
+                                <p class="venue">甲山球場</p>
+                            </div>
+                            <div class="match-status">
+                                <span class="status upcoming">予定</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="results">
+                    <h2>最近の試合結果</h2>
+                    <div class="results-list">
+                        <div class="match-item completed">
+                            <div class="match-date">
+                                <span class="month">1月</span>
+                                <span class="day">20</span>
+                            </div>
+                            <div class="match-info">
+                                <h3>新春交流戦</h3>
+                                <p class="teams">西宮甲山HEROES vs 宝塚タイガース</p>
+                                <p class="venue">甲山球場</p>
+                                <div class="score win">
+                                    <span class="home-team">西宮甲山HEROES</span>
+                                    <span class="score-display">8 - 3</span>
+                                    <span class="away-team">宝塚タイガース</span>
+                                </div>
+                            </div>
+                            <div class="match-status">
+                                <span class="status win">勝利</span>
+                            </div>
+                        </div>
+
+                        <div class="match-item completed">
+                            <div class="match-date">
+                                <span class="month">1月</span>
+                                <span class="day">14</span>
+                            </div>
+                            <div class="match-info">
+                                <h3>練習試合</h3>
+                                <p class="teams">神戸ドルフィンズ vs 西宮甲山HEROES</p>
+                                <p class="venue">神戸市民球場</p>
+                                <div class="score loss">
+                                    <span class="away-team">神戸ドルフィンズ</span>
+                                    <span class="score-display">6 - 4</span>
+                                    <span class="home-team">西宮甲山HEROES</span>
+                                </div>
+                            </div>
+                            <div class="match-status">
+                                <span class="status loss">惜敗</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="standings">
+                    <h2>春季リーグ順位表</h2>
+                    <div class="standings-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>順位</th>
+                                    <th>チーム名</th>
+                                    <th>試合数</th>
+                                    <th>勝</th>
+                                    <th>敗</th>
+                                    <th>勝率</th>
+                                    <th>得点</th>
+                                    <th>失点</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="current-team">
+                                    <td>2</td>
+                                    <td>西宮甲山HEROES</td>
+                                    <td>2</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>.500</td>
+                                    <td>12</td>
+                                    <td>9</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>芦屋ライオンズ</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>1.000</td>
+                                    <td>7</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>神戸ファイターズ</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>.000</td>
+                                    <td>2</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>尼崎イーグルス</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>-</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="league-info">
+                    <h2>リーグ参加について</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <h3>参加リーグ</h3>
+                            <p>阪神地区少年野球連盟<br>春季・秋季リーグ戦</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>試合形式</h3>
+                            <p>7イニング制<br>時間制限120分</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>応援について</h3>
+                            <p>保護者・地域の皆様の<br>温かい応援をお待ちしています</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 西宮甲山HEROES - NextBaseballTeams. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
