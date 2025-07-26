@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!-- 
+    ニュースページ（news.html） - チームの最新情報とお知らせを掲載するページ
+    このページでは、西宮甲山HEROESに関する様々なニュース、お知らせ、イベント情報、
+    緊急連絡などを分類して表示します。カテゴリ別フィルター機能で情報を整理し、
+    ニュースレター配信登録機能も提供します。
+-->
+<html lang="ja">
+<head>
+    <!-- HTMLページのメタ情報を定義 -->
+    <meta charset="UTF-8"> <!-- 文字エンコーディングをUTF-8に設定（日本語対応） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- レスポンシブデザイン対応 -->
+    <title>ニュース - 西宮甲山HEROES</title> <!-- ブラウザタブに表示されるタイトル -->
+    <link rel="stylesheet" href="../assets/css/enhanced-styles.css"> <!-- 外部CSSファイルを読み込み -->
+</head>
+<body> <!-- ページのメインコンテンツを含むbody要素 -->
+    <!-- サイト共通のヘッダーセクション -->
+    <header>
+        <!-- メインナビゲーション -->
+        <nav>
+            <!-- チームロゴと名称エリア -->
+            <div class="logo">
+                <h1>西宮甲山HEROES</h1> <!-- チーム名 -->
+                <p>NextBaseballTeams</p> <!-- 所属団体名 -->
+            </div>
+            
+            <!-- サイト内ナビゲーションメニュー -->
+            <ul class="nav-menu">
+                <li><a href="index.html">トップページ</a></li> <!-- ホームページへのリンク -->
+                <li><a href="activities.html">活動記録</a></li> <!-- チーム活動履歴ページ -->
+                <li><a href="membership.html">会員制度</a></li> <!-- 入会案内ページ -->
+                <li><a href="league.html">地域リーグ戦</a></li> <!-- 試合情報ページ -->
+                <li><a href="news.html" class="active">ニュース</a></li> <!-- 現在のページ（activeクラスでハイライト） -->
+                <li><a href="sponsors.html">スポンサー募集</a></li> <!-- スポンサー情報ページ -->
+                <li><a href="contact.html">問合せ・リンク</a></li> <!-- 連絡先ページ -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツエリア -->
+    <main>
+        <!-- ページヘッダーセクション：ページのタイトルと概要を表示 -->
+        <section class="page-header">
+            <div class="container">
+                <h1>ニュース・最新情報</h1> <!-- メインページタイトル -->
+                <p>チームの最新ニュースとお知らせ</p> <!-- ページの概要説明 -->
+            </div>
+        </section>
+
+        <!-- ニュースのメインコンテンツセクション -->
+        <section class="news-content">
+            <div class="container">
+                <!-- ニュースカテゴリフィルターボタン群：記事をカテゴリ別に分類表示 -->
+                <div class="news-categories">
+                    <button class="category-btn active" data-category="all">すべて</button> <!-- 全記事表示（デフォルト選択） -->
+                    <button class="category-btn" data-category="announcement">お知らせ</button> <!-- 一般的なお知らせカテゴリ -->
+                    <button class="category-btn" data-category="event">イベント</button> <!-- イベント関連カテゴリ -->
+                    <button class="category-btn" data-category="recruitment">募集</button> <!-- メンバー募集等のカテゴリ -->
+                    <button class="category-btn" data-category="emergency">緊急連絡</button> <!-- 緊急時の連絡カテゴリ -->
+                </div>
+
+                <!-- ニュース記事リスト：各記事を時系列で表示 -->
+                <div class="news-list">
+                    <!-- 注目記事（featured）：春季リーグ戦開幕のお知らせ -->
+                    <article class="news-article featured" data-category="announcement">
+                        <!-- 記事のメタ情報：日付とカテゴリ -->
+                        <div class="news-meta">
+                            <span class="news-date">2025年1月21日</span> <!-- 投稿日時 -->
+                            <span class="news-category announcement">お知らせ</span> <!-- カテゴリラベル -->
+                        </div>
+                        <h2>春季リーグ戦開幕のお知らせ</h2> <!-- 記事タイトル -->
+                        <!-- 記事の要約文：読者が内容を理解しやすくする -->
+                        <p>2025年春季リーグ戦が2月15日より開幕します。第1戦は甲山球場にて尼崎イーグルスとの対戦となります。皆様のご声援をよろしくお願いいたします。</p>
+                        <a href="#" class="read-more">続きを読む</a> <!-- 詳細記事へのリンク -->
+                    </article>
+
+                    <!-- 通常記事：新メンバー募集記事 -->
+                    <article class="news-article" data-category="recruitment">
+                        <!-- 記事のメタ情報 -->
+                        <div class="news-meta">
+                            <span class="news-date">2025年1月18日</span> <!-- 投稿日時 -->
+                            <span class="news-category recruitment">募集</span> <!-- カテゴリラベル -->
+                        </div>
+                        <h2>新メンバー募集中！</h2> <!-- 記事タイトル -->
+                        <!-- 記事の要約文 -->
+                        <p>小学1年生から6年生までの新メンバーを募集しています。野球経験は問いません。まずは見学・体験からお気軽にお越しください。</p>
+                        <a href="membership.html" class="read-more">詳細を見る</a> <!-- 会員制度ページへのリンク -->
+                    </article>
+
+                    <!-- 通常記事：イベント関連記事 -->
+                    <article class="news-article" data-category="event">
+                        <!-- 記事のメタ情報 -->
+                        <div class="news-meta">
+                            <span class="news-date">2025年1月15日</span> <!-- 投稿日時 -->
+                            <span class="news-category event">イベント</span> <!-- カテゴリラベル -->
+                        </div>
+                        <h2>親子キャッチボール大会開催決定</h2> <!-- 記事タイトル -->
+                        <!-- 記事の要約文 -->
+                        <p>3月21日（祝）に親子キャッチボール大会を開催します。チームメンバー以外の親子も参加可能です。地域の皆様のご参加をお待ちしています。</p>
+                        <a href="#" class="read-more">続きを読む</a> <!-- 詳細記事へのリンク -->
+                    </article>
+
+                    <!-- 通常記事：試合結果報告 -->
+                    <article class="news-article" data-category="announcement">
+                        <!-- 記事のメタ情報 -->
+                        <div class="news-meta">
+                            <span class="news-date">2025年1月10日</span> <!-- 投稿日時 -->
+                            <span class="news-category announcement">お知らせ</span> <!-- カテゴリラベル -->
+                        </div>
+                        <h2>練習試合結果報告</h2> <!-- 記事タイトル -->
+                        <!-- 記事の要約文 -->
+                        <p>1月10日に神戸チームとの練習試合を行い、8-5で勝利しました。新メンバーも活躍し、チーム一丸となった良い試合でした。</p>
+                        <a href="activities.html" class="read-more">活動記録を見る</a> <!-- 活動記録ページへのリンク -->
+                    </article>
+
+                    <!-- 通常記事：新年の挨拶 -->
+                    <article class="news-article" data-category="announcement">
+                        <!-- 記事のメタ情報 -->
+                        <div class="news-meta">
+                            <span class="news-date">2025年1月5日</span> <!-- 投稿日時 -->
+                            <span class="news-category announcement">お知らせ</span> <!-- カテゴリラベル -->
+                        </div>
+                        <h2>新年のご挨拶</h2> <!-- 記事タイトル -->
+                        <!-- 記事の要約文 -->
+                        <p>新年明けましておめでとうございます。今年もチーム一丸となって頑張ります。地域の皆様、保護者の皆様のご支援をよろしくお願いいたします。</p>
+                        <a href="#" class="read-more">続きを読む</a> <!-- 詳細記事へのリンク -->
+                    </article>
+
+                    <!-- 緊急連絡記事：特別な強調表示 -->
+                    <article class="news-article emergency" data-category="emergency">
+                        <!-- 記事のメタ情報 -->
+                        <div class="news-meta">
+                            <span class="news-date">2024年12月28日</span> <!-- 投稿日時 -->
+                            <span class="news-category emergency">緊急連絡</span> <!-- 緊急カテゴリラベル -->
+                        </div>
+                        <h2>年末年始の練習について</h2> <!-- 記事タイトル -->
+                        <!-- 記事の要約文 -->
+                        <p>12月29日〜1月3日は練習をお休みします。1月4日より通常練習を再開予定です。緊急時の連絡先は従来通りです。</p>
+                        <a href="#" class="read-more">詳細を確認</a> <!-- 詳細記事へのリンク -->
+                    </article>
+                </div> <!-- ニュースリスト終了 -->
+
+                <!-- 過去のニュースアーカイブセクション：年別アーカイブへのリンク -->
+                <div class="news-archive">
+                    <h3>過去のニュース</h3> <!-- アーカイブセクションタイトル -->
+                    <!-- 年別アーカイブリンク集 -->
+                    <div class="archive-links">
+                        <a href="#">2024年のニュース</a> <!-- 2024年のアーカイブ -->
+                        <a href="#">2023年のニュース</a> <!-- 2023年のアーカイブ -->
+                        <a href="#">2022年のニュース</a> <!-- 2022年のアーカイブ -->
+                    </div>
+                </div>
+
+                <!-- ニュースレター配信登録セクション：メール配信サービス -->
+                <div class="newsletter-signup">
+                    <h3>ニュースレター配信登録</h3> <!-- セクションタイトル -->
+                    <p>最新情報をメールでお届けします</p> <!-- サービス説明 -->
+                    
+                    <!-- ニュースレター登録フォーム -->
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="メールアドレスを入力" required> <!-- メールアドレス入力欄（必須） -->
+                        <button type="submit" class="btn primary">登録する</button> <!-- 登録実行ボタン -->
+                    </form>
+                </div>
+            </div> <!-- コンテナ終了 -->
+        </section> <!-- ニュースコンテンツセクション終了 -->
+    </main> <!-- メインコンテンツ終了 -->
+
+    <!-- サイト共通のフッターセクション -->
+    <footer>
+        <div class="container">
+            <!-- 著作権情報と法的所有権の表示 -->
+            <p>&copy; 2025 西宮甲山HEROES - NextBaseballTeams. All rights reserved.</p>
+            
+            <!-- ソーシャルメディアリンク集 -->
+            <div class="social-links">
+                <a href="#">Facebook</a> <!-- Facebookページへのリンク（未実装） -->
+                <a href="#">Instagram</a> <!-- Instagramアカウントへのリンク（未実装） -->
+                <a href="#">YouTube</a> <!-- YouTubeチャンネルへのリンク（未実装） -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScriptファイルの読み込み：カテゴリフィルター機能等を提供 -->
+    <script src="../assets/js/script.js"></script>
+</body> <!-- body要素終了 -->
+</html> <!-- HTML文書終了 -->

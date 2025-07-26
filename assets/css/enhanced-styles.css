@@ -1,0 +1,1128 @@
+/* ==========================================================================
+   西宮甲山HEROES - 野球チーム感を強化した限界突破デザイン
+   
+   このCSSファイルは西宮甲山HEROESチームのウェブサイト用の
+   拡張スタイルシートです。野球チームの特性を活かした
+   ダイナミックで魅力的なデザインを実現します。
+   ========================================================================== */
+
+/* ==========================================================================
+   フォント設定セクション
+   ========================================================================== */
+
+/* カスタムフォントの読み込み
+   - Roboto Slab: 本文用のセリフフォント（読みやすさ重視）
+   - Oswald: 見出し用のサンセリフフォント（インパクト重視）
+   Google Fontsから読み込み、表示パフォーマンスを最適化 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700;900&family=Oswald:wght@300;400;500;600;700&display=swap');
+
+/* ==========================================================================
+   カラーパレット定義（CSS変数）
+   ========================================================================== */
+
+/* 野球テーマカラーパレット
+   CSS変数を使用して一貫したカラースキームを維持
+   各色は野球の要素（ユニフォーム、ボール、グラウンド等）をイメージ */
+:root {
+    /* メインカラー - チームアイデンティティを表現 */
+    --primary-color: #1B365D; /* ネイビーブルー - 野球ユニフォームの定番カラー */
+    --secondary-color: #FF4444; /* 野球ボールの縫い目レッド - アクセントに使用 */
+    --accent-color: #F5A623; /* ゴールド - 勝利とトロフィーをイメージ */
+    
+    /* 野球場をイメージしたナチュラルカラー */
+    --grass-green: #2E7D32; /* グラス・グリーン - 外野の芝生 */
+    --dirt-brown: #8D6E63; /* ダイヤモンドの土色 - 内野のダート */
+    
+    /* ベースカラー - 視認性と統一感を確保 */
+    --white: #FFFFFF; /* 純白 - クリーンで清潔感を演出 */
+    --light-gray: #F8F9FA; /* 薄灰色 - 背景やカードに使用 */
+    --dark-gray: #333333; /* 濃灰色 - テキストの基本色 */
+    --shadow: rgba(0, 0, 0, 0.15); /* 影 - 立体感を演出 */
+}
+
+/* ==========================================================================
+   グローバルリセット・ベーススタイル
+   ========================================================================== */
+
+/* ベーススタイルの強化
+   すべての要素に統一的なボックスモデルを適用し、
+   ブラウザ間の表示差異を解消 */
+* {
+    margin: 0; /* デフォルトマージンをリセット */
+    padding: 0; /* デフォルトパディングをリセット */
+    box-sizing: border-box; /* パディング・ボーダーを幅に含める */
+}
+
+/* bodyの基本設定
+   サイト全体の基本フォント、色、背景を定義 */
+body {
+    font-family: 'Roboto Slab', serif; /* 読みやすいセリフフォントを使用 */
+    line-height: 1.7; /* 行間を広めに設定して可読性を向上 */
+    color: var(--dark-gray); /* メインテキストカラー */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* 空をイメージした背景グラデーション */
+    overflow-x: hidden; /* 横スクロールを防止 */
+}
+
+/* ==========================================================================
+   背景装飾・パターン
+   ========================================================================== */
+
+/* 野球ボール背景パターン
+   サブトルな野球要素を背景に配置してテーマ性を強化
+   固定配置でスクロール時に動かない装飾効果 */
+body::before {
+    content: ''; /* 疑似要素として空のコンテンツ */
+    position: fixed; /* スクロールに関係なく固定表示 */
+    top: 0; /* 画面上端から配置 */
+    left: 0; /* 画面左端から配置 */
+    width: 100%; /* 画面幅いっぱい */
+    height: 100%; /* 画面高さいっぱい */
+    background-image: 
+        /* 野球ボールの縫い目レッドをイメージした円形グラデーション */
+        radial-gradient(circle at 20% 80%, rgba(255, 68, 68, 0.03) 0%, transparent 50%),
+        /* ゴールドトロフィーをイメージした円形グラデーション */
+        radial-gradient(circle at 80% 20%, rgba(245, 166, 35, 0.03) 0%, transparent 50%);
+    pointer-events: none; /* マウスイベントを無効化 */
+    z-index: -1; /* 他の要素の後ろに配置 */
+}
+
+/* ==========================================================================
+   レイアウト・コンテナ
+   ========================================================================== */
+
+/* コンテナの強化
+   コンテンツの最大幅を制限し、中央配置で統一感を演出 */
+.container {
+    max-width: 1400px; /* 最大幅を設定してワイドスクリーンでも読みやすく */
+    margin: 0 auto; /* 左右中央配置 */
+    padding: 0 30px; /* 左右に適度な余白を確保 */
+    position: relative; /* 子要素の絶対配置の基準点 */
+}
+
+/* ==========================================================================
+   ヘッダー・ナビゲーション
+   ========================================================================== */
+
+/* ヘッダーの野球テーマ強化
+   チームカラーのグラデーションと装飾で野球チームらしさを演出
+   固定ヘッダーでナビゲーションの利便性を向上 */
+header {
+    /* 野球ユニフォームをイメージしたネイビーブルーのグラデーション背景 */
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2d4a73 50%, var(--primary-color) 100%);
+    color: var(--white); /* 白文字で視認性を確保 */
+    padding: 1.5rem 0; /* 上下に十分な余白を確保 */
+    position: sticky; /* スクロール時にヘッダーを上部に固定 */
+    top: 0; /* 画面上端に固定 */
+    z-index: 1000; /* 他の要素より前面に表示 */
+    box-shadow: 0 4px 20px var(--shadow); /* 立体感を演出する影 */
+    border-bottom: 3px solid var(--accent-color); /* ゴールドのアクセントライン */
+}
+
+/* ヘッダー下部の装飾ストライプ
+   野球ユニフォームのライン装飾をイメージ */
+header::after {
+    content: ''; /* 疑似要素として空のコンテンツ */
+    position: absolute; /* ヘッダー下部に絶対配置 */
+    bottom: -3px; /* ボーダーの下に配置 */
+    left: 0; /* 左端から開始 */
+    width: 100%; /* 幅いっぱい */
+    height: 3px; /* 細いストライプライン */
+    /* チームカラーの繰り返しストライプパターン */
+    background: repeating-linear-gradient(
+        90deg, /* 水平方向のストライプ */
+        var(--secondary-color) 0px, /* レッド開始 */
+        var(--secondary-color) 10px, /* レッド終了 */
+        var(--accent-color) 10px, /* ゴールド開始 */
+        var(--accent-color) 20px /* ゴールド終了（パターン繰り返し） */
+    );
+}
+
+/* ナビゲーションバーのレイアウト
+   Flexboxを使用してロゴとメニューを両端配置 */
+nav {
+    display: flex; /* フレックスボックスレイアウト */
+    justify-content: space-between; /* 子要素を両端に配置 */
+    align-items: center; /* 垂直方向中央配置 */
+    max-width: 1400px; /* コンテナと同じ最大幅 */
+    margin: 0 auto; /* 中央配置 */
+    padding: 0 30px; /* 左右の余白 */
+    position: relative; /* 子要素の基準点 */
+}
+
+/* ==========================================================================
+   ロゴエリア
+   ========================================================================== */
+
+/* ロゴエリアの強化
+   チーム名を印象的に表示し、野球要素（絵文字）でテーマ性を強化 */
+.logo {
+    position: relative; /* 野球ボール絵文字の配置基準 */
+    padding: 0.5rem 1rem; /* 内側の余白 */
+    border-radius: 10px; /* 角を丸く */
+    background: rgba(255, 255, 255, 0.1); /* 半透明の白背景 */
+    backdrop-filter: blur(10px); /* 背景ぼかし効果（グラスモーフィズム） */
+}
+
+/* ロゴ左側の野球ボール装飾
+   回転アニメーションで動的な印象を演出 */
+.logo::before {
+    content: '⚾'; /* 野球ボール絵文字 */
+    position: absolute; /* ロゴの外側に絶対配置 */
+    left: -15px; /* ロゴの左側に配置 */
+    top: 50%; /* 垂直方向中央 */
+    transform: translateY(-50%); /* 完全な中央配置調整 */
+    font-size: 2rem; /* 大きなサイズで目立たせる */
+    animation: spin 4s linear infinite; /* 4秒間隔で回転アニメーション */
+}
+
+/* 野球ボール回転アニメーション
+   0度から360度まで滑らかに回転しながら中央配置を維持 */
+@keyframes spin {
+    from { transform: translateY(-50%) rotate(0deg); } /* 開始：0度回転 */
+    to { transform: translateY(-50%) rotate(360deg); } /* 終了：360度回転 */
+}
+
+/* ロゴのメインタイトル
+   インパクトのあるフォントとグラデーション効果 */
+.logo h1 {
+    font-family: 'Oswald', sans-serif; /* 力強いサンセリフフォント */
+    font-size: 2.2rem; /* 大きくて存在感のあるサイズ */
+    font-weight: 700; /* 太字で力強さを表現 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 文字に立体感を与える影 */
+    background: linear-gradient(45deg, #fff, #ffd700); /* 白からゴールドのグラデーション */
+    -webkit-background-clip: text; /* テキストの形でグラデーションを切り抜き（Webkit） */
+    -webkit-text-fill-color: transparent; /* テキスト色を透明に（Webkit） */
+    background-clip: text; /* テキストの形でグラデーションを切り抜き（標準） */
+}
+
+/* ロゴのサブタイトル
+   控えめなスタイルで補足情報を表示 */
+.logo p {
+    font-size: 0.9rem; /* 小さめのフォントサイズ */
+    opacity: 0.9; /* 少し透明にして控えめに */
+    font-style: italic; /* イタリック体で上品さを演出 */
+    margin-left: 0.5rem; /* 左側に少し余白 */
+}
+
+/* ==========================================================================
+   ナビゲーションメニュー
+   ========================================================================== */
+
+/* ナビゲーションの野球テーマ強化
+   グラスモーフィズム効果とホバーアニメーションで
+   モダンで魅力的なナビゲーションを実現 */
+.nav-menu {
+    display: flex; /* 横並びレイアウト */
+    list-style: none; /* リストマーカーを非表示 */
+    gap: 0.3rem; /* メニュー項目間の小さな間隔 */
+    background: rgba(255, 255, 255, 0.1); /* 半透明の白背景 */
+    border-radius: 25px; /* 丸みを帯びた形状 */
+    padding: 0.5rem; /* 内側の余白 */
+    backdrop-filter: blur(10px); /* 背景ぼかし効果 */
+}
+
+/* ナビゲーションリンクの基本スタイル
+   ホバー時の美しいアニメーション効果を含む */
+.nav-menu li a {
+    color: var(--white); /* 白文字 */
+    text-decoration: none; /* 下線を非表示 */
+    padding: 0.8rem 1.5rem; /* 十分なクリック領域を確保 */
+    border-radius: 20px; /* 丸みを帯びた形状 */
+    transition: all 0.3s ease; /* 滑らかなトランジション効果 */
+    font-weight: 500; /* 中程度の太さ */
+    font-size: 0.95rem; /* 読みやすいサイズ */
+    position: relative; /* ホバー効果の基準点 */
+    overflow: hidden; /* 子要素の表示領域を制限 */
+    display: block; /* ブロック要素として表示 */
+}
+
+/* ナビゲーションリンクのホバー・アクティブ状態
+   マウスオーバー時と現在ページの視覚的フィードバック */
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    background: linear-gradient(135deg, var(--secondary-color), #ff6666); /* レッドグラデーション背景 */
+    transform: translateY(-2px); /* 上向きの浮遊効果 */
+    box-shadow: 0 5px 15px rgba(255, 68, 68, 0.4); /* レッドの光る影効果 */
+}
+
+/* ==========================================================================
+   ヒーローセクション
+   ========================================================================== */
+
+/* ヒーローセクションの劇的強化
+   野球場をイメージした背景とダイナミックな演出で
+   訪問者に強烈な第一印象を与える */
+.hero {
+    /* 複層背景構造：グラデーションオーバーレイ＋SVG野球場背景 */
+    background: 
+        /* 上層：ネイビーブルーのグラデーションオーバーレイ（テキストの可読性確保） */
+        linear-gradient(135deg, rgba(27, 54, 93, 0.9), rgba(45, 74, 115, 0.85)),
+        /* 下層：SVGで描画した野球場のシルエット（緑の芝生、太陽、土のマウンド） */
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect width="1200" height="600" fill="%232E7D32"/><circle cx="600" cy="300" r="100" fill="%23FFE082" opacity="0.3"/><path d="M100,500 Q300,400 500,500 T900,500 Q1050,450 1200,500 V600 H0 Z" fill="%238D6E63" opacity="0.7"/></svg>');
+    background-size: cover; /* 背景を要素全体にフィット */
+    background-position: center; /* 背景を中央配置 */
+    color: var(--white); /* 白文字で可読性を確保 */
+    text-align: center; /* テキストを中央配置 */
+    padding: 6rem 0; /* 上下に大きな余白でインパクトを演出 */
+    position: relative; /* 装飾要素の配置基準 */
+    overflow: hidden; /* 装飾要素の表示領域を制限 */
+}
+
+/* 野球場のダイヤモンドパターン
+   ベースボールダイヤモンドをイメージした交差線パターンで
+   背景にサブトルなテクスチャを追加 */
+.hero::before {
+    content: ''; /* 疑似要素として空のコンテンツ */
+    position: absolute; /* ヒーローセクション内に絶対配置 */
+    top: 0; /* 上端から開始 */
+    left: 0; /* 左端から開始 */
+    width: 100%; /* 幅いっぱい */
+    height: 100%; /* 高さいっぱい */
+    /* 45度と-45度の交差線パターンでダイヤモンド形状を表現 */
+    background-image: 
+        /* 右上がりの斜線 */
+        linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.02) 50%, transparent 60%),
+        /* 左上がりの斜線 */
+        linear-gradient(-45deg, transparent 40%, rgba(255, 255, 255, 0.02) 50%, transparent 60%);
+    background-size: 80px 80px; /* パターンのサイズ（ダイヤモンドの大きさ） */
+}
+
+/* ヒーロー右上の野球・トロフィー装飾
+   野球ボールとトロフィーの絵文字でチームの目標を表現 */
+.hero::after {
+    content: '⚾🏆⚾'; /* 野球ボール→トロフィー→野球ボールの配列 */
+    position: absolute; /* ヒーローセクション右上に配置 */
+    top: 20px; /* 上端から20px */
+    right: 20px; /* 右端から20px */
+    font-size: 2rem; /* 大きなサイズで目立たせる */
+    animation: bounce 2s ease-in-out infinite; /* 2秒間隔でバウンスアニメーション */
+}
+
+/* バウンスアニメーション
+   野球ボールの跳ねる動きをイメージした上下運動 */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); } /* 基準位置 */
+    40% { transform: translateY(-10px); } /* 最高点（大きく跳ね上がり） */
+    60% { transform: translateY(-5px); } /* 中間点（小さく跳ね上がり） */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(45deg, #fff, var(--accent-color), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); }
+    to { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 166, 35, 0.5); }
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   ボタンシステム
+   ========================================================================== */
+
+/* 究極のボタンデザイン
+   チームカラーを活用した印象的なCTAボタン
+   高度なホバーエフェクトとアニメーションを実装 */
+.btn {
+    display: inline-block; /* インライン要素として幅・高さを設定可能 */
+    padding: 1rem 2.5rem; /* 十分なクリック領域を確保 */
+    border-radius: 50px; /* 完全な丸みで現代的な印象 */
+    text-decoration: none; /* リンクの下線を非表示 */
+    font-family: 'Oswald', sans-serif; /* インパクトのあるフォント */
+    font-weight: 600; /* セミボールドで力強さを表現 */
+    font-size: 1.1rem; /* 読みやすい大きさ */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 弾力的なトランジション */
+    border: none; /* デフォルトボーダーを非表示 */
+    cursor: pointer; /* ポインターカーソルでクリック可能を示唆 */
+    text-align: center; /* テキストを中央配置 */
+    position: relative; /* 装飾要素の配置基準 */
+    overflow: hidden; /* 装飾要素の表示領域を制限 */
+    text-transform: uppercase; /* 大文字表記で力強さを演出 */
+    letter-spacing: 1px; /* 文字間隔を広げて可読性向上 */
+}
+
+/* ボタンの光沢効果
+   ホバー時に左から右に流れる光の帯を実現 */
+.btn::before {
+    content: ''; /* 疑似要素として空のコンテンツ */
+    position: absolute; /* ボタン内に絶対配置 */
+    top: 0; /* 上端から開始 */
+    left: -100%; /* 初期状態では左側画面外に配置 */
+    width: 100%; /* ボタンと同じ幅 */
+    height: 100%; /* ボタンと同じ高さ */
+    /* 中央が明るい白の光沢効果 */
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s; /* 左から右への移動アニメーション */
+}
+
+/* ホバー時の光沢効果発動
+   疑似要素を右側に移動させて光の流れを演出 */
+.btn:hover::before {
+    left: 100%; /* 右側画面外まで移動 */
+}
+
+/* プライマリボタン（メインアクション）
+   野球ボールの縫い目レッドをベースとした主要ボタン */
+.btn.primary {
+    background: linear-gradient(135deg, var(--secondary-color), #ff6666); /* レッドグラデーション */
+    color: var(--white); /* 白文字で高いコントラスト */
+    box-shadow: 0 8px 25px rgba(255, 68, 68, 0.4); /* レッドの光る影 */
+}
+
+/* プライマリボタンホバー状態
+   浮遊効果と強化された影でインタラクティブ感を演出 */
+.btn.primary:hover {
+    background: linear-gradient(135deg, #ff6666, var(--secondary-color)); /* 逆グラデーション */
+    transform: translateY(-5px); /* 上向きの浮遊効果 */
+    box-shadow: 0 15px 40px rgba(255, 68, 68, 0.6); /* より強い影効果 */
+}
+
+/* セカンダリボタン（副次アクション）
+   ゴールドの枠線で上品さと重要性を表現 */
+.btn.secondary {
+    background: transparent; /* 透明背景 */
+    color: var(--white); /* 白文字 */
+    border: 3px solid var(--accent-color); /* ゴールドの太い枠線 */
+    box-shadow: 0 8px 25px rgba(245, 166, 35, 0.3); /* ゴールドの光る影 */
+}
+
+/* セカンダリボタンホバー状態
+   ゴールドの塗りつぶしでプレミアム感を演出 */
+.btn.secondary:hover {
+    background: linear-gradient(135deg, var(--accent-color), #ffcc02); /* ゴールドグラデーション */
+    color: var(--primary-color); /* ネイビーブルー文字で可読性確保 */
+    transform: translateY(-5px); /* 上向きの浮遊効果 */
+    box-shadow: 0 15px 40px rgba(245, 166, 35, 0.5); /* より強い影効果 */
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* セクションの強化 */
+section {
+    padding: 5rem 0;
+    position: relative;
+}
+
+.page-header {
+    background: 
+        linear-gradient(135deg, var(--primary-color) 0%, #2d4a73 50%, var(--grass-green) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+    background-size: 50px 50px;
+}
+
+.page-header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* NBT理念セクションの強化 */
+.nbt-philosophy {
+    background: 
+        linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.95)),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="none"/><circle cx="100" cy="100" r="50" fill="none" stroke="%23F5A623" stroke-width="2" opacity="0.1"/></svg>');
+    position: relative;
+}
+
+.nbt-philosophy::before {
+    content: '🏆';
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 3rem;
+    opacity: 0.3;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.1); opacity: 0.6; }
+}
+
+.nbt-philosophy h2,
+.latest-news h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.nbt-philosophy h2::after,
+.latest-news h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+/* カード系コンポーネントの強化 */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.news-item {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 249, 250, 0.9));
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.news-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color), var(--grass-green));
+}
+
+.news-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.news-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+/* アクティビティ系コンポーネント */
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2.5rem;
+}
+
+.activity-item {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.activity-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 68, 68, 0.05) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.activity-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.activity-content {
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* 会員制度カードの強化 */
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin: 3rem 0;
+}
+
+.membership-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.95));
+    border-radius: 25px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.membership-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color), var(--grass-green));
+    z-index: -1;
+    padding: 2px;
+    border-radius: inherit;
+}
+
+.membership-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+}
+
+.price {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 2rem;
+}
+
+/* フッターの強化 */
+footer {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1a2332 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 0;
+    margin-top: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--secondary-color) 0px,
+        var(--secondary-color) 15px,
+        var(--accent-color) 15px,
+        var(--accent-color) 30px,
+        var(--grass-green) 30px,
+        var(--grass-green) 45px
+    );
+}
+
+.social-links a {
+    color: var(--white);
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.social-links a:hover {
+    background: linear-gradient(135deg, var(--accent-color), #ffcc02);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* タブとカテゴリボタンのスタイル */
+.activity-categories,
+.news-categories {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--primary-color);
+    background: var(--white);
+    color: var(--primary-color);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.95rem;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.category-btn.active,
+.category-btn:hover {
+    background: linear-gradient(135deg, var(--primary-color), #2d4a73);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(27, 54, 93, 0.3);
+}
+
+.league-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #eee;
+}
+
+.tab-btn {
+    padding: 1rem 2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    color: var(--dark-gray);
+}
+
+.tab-btn.active {
+    border-bottom-color: var(--secondary-color);
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.tab-btn:hover:not(.active) {
+    color: var(--primary-color);
+    background: rgba(27, 54, 93, 0.05);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* スケジュール・結果表示 */
+.schedule-list,
+.results-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.match-item {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.match-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+
+.match-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.match-date {
+    text-align: center;
+    min-width: 100px;
+    margin-right: 2rem;
+}
+
+.match-date .month {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.match-date .day {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+    font-family: 'Oswald', sans-serif;
+}
+
+.match-date .time {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.match-info {
+    flex: 1;
+}
+
+.match-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.teams {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    color: var(--dark-gray);
+}
+
+.venue {
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.score {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.score-display {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 1rem;
+    font-family: 'Oswald', sans-serif;
+    color: var(--primary-color);
+}
+
+.match-status {
+    min-width: 80px;
+    text-align: center;
+}
+
+.status {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+.status.upcoming {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    color: #1565c0;
+}
+
+.status.win {
+    background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+    color: #2e7d32;
+}
+
+.status.loss {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    color: #f57c00;
+}
+
+/* 順位表 */
+.standings-table {
+    overflow-x: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.standings-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.standings-table th,
+.standings-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.standings-table th {
+    background: linear-gradient(135deg, var(--primary-color), #2d4a73);
+    color: var(--white);
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+.current-team {
+    background: linear-gradient(135deg, rgba(245, 166, 35, 0.1), rgba(255, 204, 2, 0.1));
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* ニュース記事 */
+.news-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.news-article {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.news-article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.news-article.featured {
+    border-left: 5px solid var(--secondary-color);
+}
+
+.news-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.news-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.news-category {
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+.news-category.announcement {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    color: #1565c0;
+}
+
+.news-category.event {
+    background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+    color: #7b1fa2;
+}
+
+.news-category.recruitment {
+    background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+    color: #2e7d32;
+}
+
+.news-category.emergency {
+    background: linear-gradient(135deg, #ffebee, #ffcdd2);
+    color: #c62828;
+}
+
+/* ==========================================================================
+   レスポンシブデザイン
+   ========================================================================== */
+
+/* レスポンシブ強化
+   タブレット・スマートフォンでの表示最適化
+   768px以下のデバイス（iPad縦向き、スマートフォン横向け）に対応 */
+@media (max-width: 768px) {
+    /* ヒーローセクションのタイトルサイズを縮小
+       小さな画面でも読みやすく、レイアウト崩れを防止 */
+    .hero-content h2 {
+        font-size: 2.5rem; /* デスクトップの4.5remから縮小 */
+    }
+    
+    /* ボタンサイズの調整
+       タップしやすさを保ちつつ、画面占有率を抑制 */
+    .btn {
+        padding: 0.8rem 2rem; /* デスクトップの1rem 2.5remから縮小 */
+        font-size: 1rem; /* デスクトップの1.1remから縮小 */
+    }
+    
+    /* CTAボタンエリアの縦積み配置
+       横並びから縦並びに変更して狭い画面に対応 */
+    .cta-buttons {
+        flex-direction: column; /* 横並び→縦並び */
+        align-items: center; /* 中央配置維持 */
+        gap: 1rem; /* デスクトップの2remから縮小 */
+    }
+    
+    /* ページヘッダータイトルの縮小 */
+    .page-header h1 {
+        font-size: 2.5rem; /* デスクトップの3.5remから縮小 */
+    }
+    
+    /* セクションタイトルの縮小 */
+    .nbt-philosophy h2,
+    .latest-news h2 {
+        font-size: 2.2rem; /* デスクトップの3remから縮小 */
+    }
+}
+
+/* 超小型デバイス対応
+   480px以下のデバイス（iPhone SE、小型Androidスマートフォン）
+   最小限の画面スペースを最大限に活用 */
+@media (max-width: 480px) {
+    /* ヒーローセクションの余白を大幅削減
+       縦画面での貴重なスペースを有効活用 */
+    .hero {
+        padding: 3rem 0; /* デスクトップの6rem 0から半減 */
+    }
+    
+    /* ヒーロータイトルをさらに縮小
+       可読性を維持しながら画面に収まるサイズに調整 */
+    .hero-content h2 {
+        font-size: 2rem; /* タブレットの2.5remからさらに縮小 */
+    }
+    
+    /* ロゴタイトルの縮小
+       ヘッダー高さを抑制してコンテンツエリアを確保 */
+    .logo h1 {
+        font-size: 1.8rem; /* デスクトップの2.2remから大幅縮小 */
+    }
+    
+    /* ナビゲーションメニューの最適化
+       小さな画面でも操作しやすいように調整 */
+    .nav-menu {
+        gap: 0.2rem; /* メニュー項目間の間隔をさらに縮小 */
+        padding: 0.3rem; /* メニュー全体の余白を縮小 */
+    }
+    
+    /* ナビゲーションリンクの縮小
+       タップしやすさを保ちつつ、より多くの項目を表示 */
+    .nav-menu li a {
+        padding: 0.6rem 1rem; /* クリック領域を縮小 */
+        font-size: 0.85rem; /* フォントサイズを縮小 */
+    }
+}
+
+/* ==========================================================================
+   特殊効果・アニメーション
+   ========================================================================== */
+
+/* 特殊効果とアニメーション
+   ページにダイナミックな印象を与える各種アニメーション効果 */
+
+/* 下から上にスライドインするアニメーション
+   要素が下からふわっと現れる効果でユーザーの注意を引く */
+@keyframes slideInUp {
+    from {
+        opacity: 0; /* 開始時は透明 */
+        transform: translateY(30px); /* 下に30pxオフセット */
+    }
+    to {
+        opacity: 1; /* 終了時は完全表示 */
+        transform: translateY(0); /* 元の位置に移動 */
+    }
+}
+
+/* スライドインアニメーションを適用するクラス
+   JavaScriptと組み合わせてスクロール時の要素出現演出に使用 */
+.animate-in {
+    animation: slideInUp 0.8s ease-out; /* 0.8秒かけて滑らかに実行 */
+}
+
+/* ==========================================================================
+   ページロード時アニメーション
+   ========================================================================== */
+
+/* ロード時のフェードイン
+   ページ全体が読み込まれた際の美しい表示演出 */
+body {
+    opacity: 0; /* 初期状態は透明 */
+    animation: fadeIn 1s ease-in forwards; /* 1秒かけてフェードイン */
+}
+
+/* フェードインアニメーションの定義
+   透明から完全表示への滑らかな移行 */
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* 最終的に完全表示 */
+    }
+}
+
+/* ==========================================================================
+   CSSファイル終了
+   
+   このファイルで定義されている主要機能：
+   1. 野球チームテーマのカラーパレット定義
+   2. レスポンシブ対応のヘッダー・ナビゲーション
+   3. インパクトのあるヒーローセクション
+   4. 高度なボタンデザインシステム
+   5. カード型コンポーネント群
+   6. アニメーション・特殊効果
+   7. 完全なレスポンシブデザイン対応
+   
+   開発者へのメモ：
+   - CSS変数を活用してメンテナンス性を向上
+   - モバイルファーストではなくデスクトップファーストの設計
+   - 野球チームのブランディングを重視したデザイン
+   - アクセシビリティとユーザビリティのバランスを考慮
+   ========================================================================== */

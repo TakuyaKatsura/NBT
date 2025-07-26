@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!-- 
+    会員制度ページ（membership.html） - 西宮甲山HEROESの入会案内ページ
+    このページでは、NBTの会員制度について詳しく説明し、入会を希望する方々に
+    必要な情報を提供します。会員区分、料金、特典、入会手続きなどを網羅しています。
+-->
+<html lang="ja">
+<head>
+    <!-- HTMLページのメタ情報を定義 -->
+    <meta charset="UTF-8"> <!-- 文字エンコーディングをUTF-8に設定（日本語対応） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- レスポンシブデザイン対応 -->
+    <title>会員制度 - 西宮甲山HEROES</title> <!-- ブラウザタブに表示されるタイトル -->
+    <link rel="stylesheet" href="../assets/css/enhanced-styles.css"> <!-- 外部CSSファイルを読み込み -->
+</head>
+<body> <!-- ページのメインコンテンツを含むbody要素 -->
+    <!-- サイト共通のヘッダーセクション -->
+    <header>
+        <!-- メインナビゲーション -->
+        <nav>
+            <!-- チームロゴと名称エリア -->
+            <div class="logo">
+                <h1>西宮甲山HEROES</h1> <!-- チーム名 -->
+                <p>NextBaseballTeams</p> <!-- 所属団体名 -->
+            </div>
+            
+            <!-- サイト内ナビゲーションメニュー -->
+            <ul class="nav-menu">
+                <li><a href="index.html">トップページ</a></li> <!-- ホームページへのリンク -->
+                <li><a href="activities.html">活動記録</a></li> <!-- チーム活動履歴ページ -->
+                <li><a href="membership.html" class="active">会員制度</a></li> <!-- 現在のページ（activeクラスでハイライト） -->
+                <li><a href="league.html">地域リーグ戦</a></li> <!-- 試合情報ページ -->
+                <li><a href="news.html">ニュース</a></li> <!-- 最新情報ページ -->
+                <li><a href="sponsors.html">スポンサー募集</a></li> <!-- スポンサー情報ページ -->
+                <li><a href="contact.html">問合せ・リンク</a></li> <!-- 連絡先ページ -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツエリア -->
+    <main>
+        <!-- ページヘッダーセクション：ページのタイトルと概要を表示 -->
+        <section class="page-header">
+            <div class="container">
+                <h1>会員制度</h1> <!-- メインページタイトル -->
+                <p>NBTの会員制度についてご案内します</p> <!-- ページの概要説明 -->
+            </div>
+        </section>
+
+        <!-- 会員制度のメインコンテンツセクション -->
+        <section class="membership-content">
+            <div class="container">
+                <!-- 会員制度の概要説明エリア -->
+                <div class="membership-overview">
+                    <h2>NBT会員制度について</h2> <!-- セクションタイトル -->
+                    <!-- 会員制度の目的と意義を説明するテキスト -->
+                    <p>NextBaseballTeams（NBT）では、地域の野球活動を支援し、子どもたちの健全な育成を目指すための会員制度を設けています。</p>
+                </div>
+
+                <!-- 会員区分と料金プランの説明エリア -->
+                <div class="membership-types">
+                    <h2>会員区分</h2> <!-- セクションタイトル -->
+                    
+                    <!-- 会員タイプをグリッドレイアウトで表示するコンテナ -->
+                    <div class="membership-grid">
+                        <!-- 選手会員カード：実際に野球をしたい子ども向け -->
+                        <div class="membership-card">
+                            <h3>選手会員</h3> <!-- 会員タイプ名 -->
+                            <div class="price">月額 3,000円</div> <!-- 料金表示 -->
+                            
+                            <!-- 選手会員の特典リスト -->
+                            <ul class="benefits">
+                                <li>チーム練習参加</li> <!-- 基本的な練習参加権 -->
+                                <li>公式戦出場資格</li> <!-- 公式試合への参加資格 -->
+                                <li>用具貸し出し</li> <!-- 野球用具のレンタルサービス -->
+                                <li>保険加入</li> <!-- スポーツ保険の適用 -->
+                                <li>イベント参加</li> <!-- チームイベントへの参加権 -->
+                            </ul>
+                            <button class="btn primary">入会申込み</button> <!-- 入会申込みボタン -->
+                        </div>
+
+                        <!-- 保護者会員カード：子どもの保護者向け -->
+                        <div class="membership-card">
+                            <h3>保護者会員</h3> <!-- 会員タイプ名 -->
+                            <div class="price">年額 5,000円</div> <!-- 料金表示 -->
+                            
+                            <!-- 保護者会員の特典リスト -->
+                            <ul class="benefits">
+                                <li>保護者会参加</li> <!-- 保護者関連イベントへの参加権 -->
+                                <li>チーム運営参加</li> <!-- チーム経営や運営への関与 -->
+                                <li>イベント企画参加</li> <!-- イベントの企画や運営への参加 -->
+                                <li>情報共有グループ参加</li> <!-- 保護者間の情報交換グループ -->
+                                <li>送迎サポート</li> <!-- 練習や試合への送迎サポート -->
+                            </ul>
+                            <button class="btn primary">入会申込み</button> <!-- 入会申込みボタン -->
+                        </div>
+
+                        <!-- サポート会員カード：地域支援者向け -->
+                        <div class="membership-card">
+                            <h3>サポート会員</h3> <!-- 会員タイプ名 -->
+                            <div class="price">年額 10,000円</div> <!-- 料金表示 -->
+                            
+                            <!-- サポート会員の特典リスト -->
+                            <ul class="benefits">
+                                <li>チーム活動支援</li> <!-- チーム活動の財政的・精神的支援 -->
+                                <li>地域野球振興</li> <!-- 地域全体の野球文化振興への貢献 -->
+                                <li>イベント優先参加</li> <!-- 特別イベントへの優先参加権 -->
+                                <li>特別感謝状贈呈</li> <!-- チームからの特別な感謝表示 -->
+                                <li>年次報告書送付</li> <!-- チームの年間活動報告書の提供 -->
+                            </ul>
+                            <button class="btn primary">入会申込み</button> <!-- 入会申込みボタン -->
+                        </div>
+                    </div> <!-- 会員グリッド終了 -->
+                </div> <!-- 会員タイプセクション終了 -->
+
+                <!-- 入会の手続きと流れを説明するセクション -->
+                <div class="membership-process">
+                    <h2>入会の流れ</h2> <!-- セクションタイトル -->
+                    
+                    <!-- 入会のステップを時系列で表示するコンテナ -->
+                    <div class="process-steps">
+                        <!-- ステップ1：初回のお問い合わせ -->
+                        <div class="step">
+                            <div class="step-number">1</div> <!-- ステップ番号 -->
+                            <h3>お問い合わせ</h3> <!-- ステップ名 -->
+                            <p>まずは見学やご相談から始めましょう</p> <!-- ステップ説明 -->
+                        </div>
+                        
+                        <!-- ステップ2：実際の体験参加 -->
+                        <div class="step">
+                            <div class="step-number">2</div> <!-- ステップ番号 -->
+                            <h3>体験参加</h3> <!-- ステップ名 -->
+                            <p>実際の練習に参加してチームの雰囲気を確認</p> <!-- ステップ説明 -->
+                        </div>
+                        
+                        <!-- ステップ3：正式な入会申込み -->
+                        <div class="step">
+                            <div class="step-number">3</div> <!-- ステップ番号 -->
+                            <h3>入会申込み</h3> <!-- ステップ名 -->
+                            <p>申込書の提出と会費のお支払い</p> <!-- ステップ説明 -->
+                        </div>
+                        
+                        <!-- ステップ4：活動開始 -->
+                        <div class="step">
+                            <div class="step-number">4</div> <!-- ステップ番号 -->
+                            <h3>活動開始</h3> <!-- ステップ名 -->
+                            <p>チームメンバーとして活動開始！</p> <!-- ステップ説明 -->
+                        </div>
+                    </div> <!-- プロセスステップコンテナ終了 -->
+                </div> <!-- メンバーシッププロセスセクション終了 -->
+
+                <!-- 入会に必要な要件や条件を説明するセクション -->
+                <div class="membership-requirements">
+                    <h2>入会要件</h2> <!-- セクションタイトル -->
+                    
+                    <!-- 会員タイプ別の要件をグリッドレイアウトで表示 -->
+                    <div class="requirements-grid">
+                        <!-- 選手会員の入会要件 -->
+                        <div class="requirement-item">
+                            <h3>選手会員</h3> <!-- 会員タイプ名 -->
+                            <ul>
+                                <li>小学1年生〜6年生</li> <!-- 年齢制限 -->
+                                <li>野球に興味のある子ども</li> <!-- モチベーション要件 -->
+                                <li>保護者の同意</li> <!-- 保護者の承認が必要 -->
+                                <li>健康状態良好</li> <!-- スポーツ参加に必要な健康状態 -->
+                            </ul>
+                        </div>
+                        
+                        <!-- 保護者・サポート会員の入会要件 -->
+                        <div class="requirement-item">
+                            <h3>保護者・サポート会員</h3> <!-- 会員タイプ名 -->
+                            <ul>
+                                <li>NBTの理念に賛同</li> <!-- 団体の理念への理解と支持 -->
+                                <li>地域野球振興への協力意思</li> <!-- 地域貢献への意欲 -->
+                                <li>定期的な参加が可能</li> <!-- 継続的な関与能力 -->
+                                <li>子どもの成長を支援する意欲</li> <!-- 子どもたちへのサポート意欲 -->
+                            </ul>
+                        </div>
+                    </div> <!-- 要件グリッド終了 -->
+                </div> <!-- メンバーシップ要件セクション終了 -->
+
+                <!-- 入会への行動を促すCTA（Call To Action）セクション -->
+                <div class="contact-cta">
+                    <h2>入会をご希望の方へ</h2> <!-- CTAタイトル -->
+                    <!-- お問い合わせを促すメッセージ -->
+                    <p>ご質問やご相談がございましたら、お気軽にお問い合わせください。</p>
+                    <!-- お問い合わせページへのリンクボタン -->
+                    <a href="contact.html" class="btn primary large">お問い合わせ</a>
+                </div>
+            </div> <!-- コンテナ終了 -->
+        </section> <!-- メンバーシップコンテンツセクション終了 -->
+    </main> <!-- メインコンテンツ終了 -->
+
+    <!-- サイト共通のフッターセクション -->
+    <footer>
+        <div class="container">
+            <!-- 著作権情報と法的所有権の表示 -->
+            <p>&copy; 2025 西宮甲山HEROES - NextBaseballTeams. All rights reserved.</p>
+            
+            <!-- ソーシャルメディアリンク集 -->
+            <div class="social-links">
+                <a href="#">Facebook</a> <!-- Facebookページへのリンク（未実装） -->
+                <a href="#">Instagram</a> <!-- Instagramアカウントへのリンク（未実装） -->
+                <a href="#">YouTube</a> <!-- YouTubeチャンネルへのリンク（未実装） -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScriptファイルの読み込み：インタラクティブ機能を提供 -->
+    <script src="../assets/js/script.js"></script>
+</body> <!-- body要素終了 -->
+</html> <!-- HTML文書終了 -->

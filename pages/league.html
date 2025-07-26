@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!-- 
+    地域リーグ戦ページ（league.html） - 試合スケジュール、結果、順位表の情報ページ
+    このページでは、西宮甲山HEROESが参加する地域リーグ戦の情報を総合的に提供します。
+    タブ切り替え機能で、今後の試合予定、過去の試合結果、リーグ順位表を表示します。
+-->
+<html lang="ja">
+<head>
+    <!-- HTMLページのメタ情報を定義 -->
+    <meta charset="UTF-8"> <!-- 文字エンコーディングをUTF-8に設定（日本語対応） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- レスポンシブデザイン対応 -->
+    <title>地域リーグ戦 - 西宮甲山HEROES</title> <!-- ブラウザタブに表示されるタイトル -->
+    <link rel="stylesheet" href="../assets/css/enhanced-styles.css"> <!-- 外部CSSファイルを読み込み -->
+</head>
+<body> <!-- ページのメインコンテンツを含むbody要素 -->
+    <!-- サイト共通のヘッダーセクション -->
+    <header>
+        <!-- メインナビゲーション -->
+        <nav>
+            <!-- チームロゴと名称エリア -->
+            <div class="logo">
+                <h1>西宮甲山HEROES</h1> <!-- チーム名 -->
+                <p>NextBaseballTeams</p> <!-- 所属団体名 -->
+            </div>
+            
+            <!-- サイト内ナビゲーションメニュー -->
+            <ul class="nav-menu">
+                <li><a href="index.html">トップページ</a></li> <!-- ホームページへのリンク -->
+                <li><a href="activities.html">活動記録</a></li> <!-- チーム活動履歴ページ -->
+                <li><a href="membership.html">会員制度</a></li> <!-- 入会案内ページ -->
+                <li><a href="league.html" class="active">地域リーグ戦</a></li> <!-- 現在のページ（activeクラスでハイライト） -->
+                <li><a href="news.html">ニュース</a></li> <!-- 最新情報ページ -->
+                <li><a href="sponsors.html">スポンサー募集</a></li> <!-- スポンサー情報ページ -->
+                <li><a href="contact.html">問合せ・リンク</a></li> <!-- 連絡先ページ -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツエリア -->
+    <main>
+        <!-- ページヘッダーセクション：ページのタイトルと概要を表示 -->
+        <section class="page-header">
+            <div class="container">
+                <h1>地域リーグ戦</h1> <!-- メインページタイトル -->
+                <p>試合スケジュールと結果をお知らせします</p> <!-- ページの概要説明 -->
+            </div>
+        </section>
+
+        <!-- リーグ戦のメインコンテンツセクション -->
+        <section class="league-content">
+            <div class="container">
+                <!-- タブ切り替えナビゲーション：スケジュール、結果、順位表を切り替え -->
+                <div class="league-tabs">
+                    <button class="tab-btn active" data-tab="schedule">試合スケジュール</button> <!-- アクティブタブ：今後の試合予定 -->
+                    <button class="tab-btn" data-tab="results">試合結果</button> <!-- 過去の試合結果タブ -->
+                    <button class="tab-btn" data-tab="standings">順位表</button> <!-- リーグ順位表タブ -->
+                </div>
+
+                <!-- スケジュールタブのコンテンツ：今後の試合予定を表示 -->
+                <div class="tab-content active" id="schedule">
+                    <h2>今後の試合予定</h2> <!-- セクションタイトル -->
+                    
+                    <!-- 試合スケジュールリスト -->
+                    <div class="schedule-list">
+                        <!-- 個別の試合情報：春季リーグ第1戦 -->
+                        <div class="match-item upcoming">
+                            <!-- 試合日時情報 -->
+                            <div class="match-date">
+                                <span class="month">2月</span> <!-- 月 -->
+                                <span class="day">15</span> <!-- 日 -->
+                                <span class="time">09:00</span> <!-- 開始時刻 -->
+                            </div>
+                            
+                            <!-- 試合詳細情報 -->
+                            <div class="match-info">
+                                <h3>春季リーグ第1戦</h3> <!-- 試合名 -->
+                                <p class="teams">西宮甲山HEROES vs 尼崎イーグルス</p> <!-- 対戦チーム -->
+                                <p class="venue">甲山球場</p> <!-- 会場情報 -->
+                            </div>
+                            
+                            <!-- 試合ステータス -->
+                            <div class="match-status">
+                                <span class="status upcoming">予定</span> <!-- 試合状態：予定 -->
+                            </div>
+                        </div>
+
+                        <!-- 個別の試合情報：春季リーグ第2戦 -->
+                        <div class="match-item upcoming">
+                            <!-- 試合日時情報 -->
+                            <div class="match-date">
+                                <span class="month">2月</span> <!-- 月 -->
+                                <span class="day">22</span> <!-- 日 -->
+                                <span class="time">13:00</span> <!-- 開始時刻 -->
+                            </div>
+                            
+                            <!-- 試合詳細情報 -->
+                            <div class="match-info">
+                                <h3>春季リーグ第2戦</h3> <!-- 試合名 -->
+                                <p class="teams">芦屋ライオンズ vs 西宮甲山HEROES</p> <!-- 対戦チーム（アウェイゲーム） -->
+                                <p class="venue">芦屋市民球場</p> <!-- 会場情報 -->
+                            </div>
+                            
+                            <!-- 試合ステータス -->
+                            <div class="match-status">
+                                <span class="status upcoming">予定</span> <!-- 試合状態：予定 -->
+                            </div>
+                        </div>
+
+                        <!-- 個別の試合情報：春季リーグ第3戦 -->
+                        <div class="match-item upcoming">
+                            <!-- 試合日時情報 -->
+                            <div class="match-date">
+                                <span class="month">3月</span> <!-- 月 -->
+                                <span class="day">1</span> <!-- 日 -->
+                                <span class="time">10:00</span> <!-- 開始時刻 -->
+                            </div>
+                            
+                            <!-- 試合詳細情報 -->
+                            <div class="match-info">
+                                <h3>春季リーグ第3戦</h3> <!-- 試合名 -->
+                                <p class="teams">西宮甲山HEROES vs 神戸ファイターズ</p> <!-- 対戦チーム -->
+                                <p class="venue">甲山球場</p> <!-- 会場情報 -->
+                            </div>
+                            
+                            <!-- 試合ステータス -->
+                            <div class="match-status">
+                                <span class="status upcoming">予定</span> <!-- 試合状態：予定 -->
+                            </div>
+                        </div>
+                    </div> <!-- スケジュールリスト終了 -->
+                </div> <!-- スケジュールタブコンテンツ終了 -->
+
+                <!-- 結果タブのコンテンツ：過去の試合結果を表示 -->
+                <div class="tab-content" id="results">
+                    <h2>最近の試合結果</h2> <!-- セクションタイトル -->
+                    
+                    <!-- 試合結果リスト -->
+                    <div class="results-list">
+                        <!-- 個別の試合結果：新春交流戦（勝利） -->
+                        <div class="match-item completed">
+                            <!-- 試合日時情報 -->
+                            <div class="match-date">
+                                <span class="month">1月</span> <!-- 月 -->
+                                <span class="day">20</span> <!-- 日 -->
+                            </div>
+                            
+                            <!-- 試合詳細情報と結果 -->
+                            <div class="match-info">
+                                <h3>新春交流戦</h3> <!-- 試合名 -->
+                                <p class="teams">西宮甲山HEROES vs 宝塚タイガース</p> <!-- 対戦チーム -->
+                                <p class="venue">甲山球場</p> <!-- 会場情報 -->
+                                
+                                <!-- 試合スコア表示（勝利ケース） -->
+                                <div class="score win">
+                                    <span class="home-team">西宮甲山HEROES</span> <!-- ホームチーム -->
+                                    <span class="score-display">8 - 3</span> <!-- スコア -->
+                                    <span class="away-team">宝塚タイガース</span> <!-- アウェイチーム -->
+                                </div>
+                            </div>
+                            
+                            <!-- 試合結果ステータス -->
+                            <div class="match-status">
+                                <span class="status win">勝利</span> <!-- 試合結果：勝利 -->
+                            </div>
+                        </div>
+
+                        <!-- 個別の試合結果：練習試合（敗北） -->
+                        <div class="match-item completed">
+                            <!-- 試合日時情報 -->
+                            <div class="match-date">
+                                <span class="month">1月</span> <!-- 月 -->
+                                <span class="day">14</span> <!-- 日 -->
+                            </div>
+                            
+                            <!-- 試合詳細情報と結果 -->
+                            <div class="match-info">
+                                <h3>練習試合</h3> <!-- 試合名 -->
+                                <p class="teams">神戸ドルフィンズ vs 西宮甲山HEROES</p> <!-- 対戦チーム -->
+                                <p class="venue">神戸市民球場</p> <!-- 会場情報 -->
+                                
+                                <!-- 試合スコア表示（敗北ケース） -->
+                                <div class="score loss">
+                                    <span class="away-team">神戸ドルフィンズ</span> <!-- 相手チーム -->
+                                    <span class="score-display">6 - 4</span> <!-- スコア -->
+                                    <span class="home-team">西宮甲山HEROES</span> <!-- 自チーム -->
+                                </div>
+                            </div>
+                            
+                            <!-- 試合結果ステータス -->
+                            <div class="match-status">
+                                <span class="status loss">惜敗</span> <!-- 試合結果：敗北 -->
+                            </div>
+                        </div>
+                    </div> <!-- 結果リスト終了 -->
+                </div> <!-- 結果タブコンテンツ終了 -->
+
+                <!-- 順位表タブのコンテンツ：リーグの順位表を表示 -->
+                <div class="tab-content" id="standings">
+                    <h2>春季リーグ順位表</h2> <!-- セクションタイトル -->
+                    
+                    <!-- 順位表を表示するテーブルコンテナ -->
+                    <div class="standings-table">
+                        <!-- リーグ順位表テーブル -->
+                        <table>
+                            <!-- テーブルヘッダー：各統計項目のラベル -->
+                            <thead>
+                                <tr>
+                                    <th>順位</th> <!-- リーグ内の順位 -->
+                                    <th>チーム名</th> <!-- 参加チーム名 -->
+                                    <th>試合数</th> <!-- 総試合数 -->
+                                    <th>勝</th> <!-- 勝数 -->
+                                    <th>敗</th> <!-- 敗数 -->
+                                    <th>勝率</th> <!-- 勝率（勝数/試合数） -->
+                                    <th>得点</th> <!-- 総得点 -->
+                                    <th>失点</th> <!-- 総失点 -->
+                                </tr>
+                            </thead>
+                            
+                            <!-- テーブルボディ：各チームの成績データ -->
+                            <tbody>
+                                <!-- 自チーム（西宮甲山HEROES）の成績行（強調表示） -->
+                                <tr class="current-team">
+                                    <td>2</td> <!-- 現在の順位 -->
+                                    <td>西宮甲山HEROES</td> <!-- 自チーム名 -->
+                                    <td>2</td> <!-- 消化試合数 -->
+                                    <td>1</td> <!-- 勝数 -->
+                                    <td>1</td> <!-- 敗数 -->
+                                    <td>.500</td> <!-- 勝率 -->
+                                    <td>12</td> <!-- 総得点 -->
+                                    <td>9</td> <!-- 総失点 -->
+                                </tr>
+                                
+                                <!-- 他チームの成績行：芦屋ライオンズ（1位） -->
+                                <tr>
+                                    <td>1</td> <!-- 順位 -->
+                                    <td>芦屋ライオンズ</td> <!-- チーム名 -->
+                                    <td>1</td> <!-- 消化試合数 -->
+                                    <td>1</td> <!-- 勝数 -->
+                                    <td>0</td> <!-- 敗数 -->
+                                    <td>1.000</td> <!-- 勝率 -->
+                                    <td>7</td> <!-- 総得点 -->
+                                    <td>3</td> <!-- 総失点 -->
+                                </tr>
+                                
+                                <!-- 他チームの成績行：神戸ファイターズ（3位） -->
+                                <tr>
+                                    <td>3</td> <!-- 順位 -->
+                                    <td>神戸ファイターズ</td> <!-- チーム名 -->
+                                    <td>1</td> <!-- 消化試合数 -->
+                                    <td>0</td> <!-- 勝数 -->
+                                    <td>1</td> <!-- 敗数 -->
+                                    <td>.000</td> <!-- 勝率 -->
+                                    <td>2</td> <!-- 総得点 -->
+                                    <td>5</td> <!-- 総失点 -->
+                                </tr>
+                                
+                                <!-- 他チームの成績行：尼崎イーグルス（4位） -->
+                                <tr>
+                                    <td>4</td> <!-- 順位 -->
+                                    <td>尼崎イーグルス</td> <!-- チーム名 -->
+                                    <td>0</td> <!-- 消化試合数（まだ未消化） -->
+                                    <td>0</td> <!-- 勝数 -->
+                                    <td>0</td> <!-- 敗数 -->
+                                    <td>-</td> <!-- 勝率（試合未実施のため表示なし） -->
+                                    <td>0</td> <!-- 総得点 -->
+                                    <td>0</td> <!-- 総失点 -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div> <!-- 順位表テーブルコンテナ終了 -->
+                </div> <!-- 順位表タブコンテンツ終了 -->
+
+                <!-- リーグ参加に関する基本情報を提供するセクション -->
+                <div class="league-info">
+                    <h2>リーグ参加について</h2> <!-- セクションタイトル -->
+                    
+                    <!-- リーグ情報をグリッドレイアウトで表示 -->
+                    <div class="info-grid">
+                        <!-- 参加リーグ情報 -->
+                        <div class="info-item">
+                            <h3>参加リーグ</h3> <!-- 情報タイトル -->
+                            <p>阪神地区少年野球連盟<br>春季・秋季リーグ戦</p> <!-- 所属リーグ名とシーズン情報 -->
+                        </div>
+                        
+                        <!-- 試合ルール情報 -->
+                        <div class="info-item">
+                            <h3>試合形式</h3> <!-- 情報タイトル -->
+                            <p>7イニング制<br>時間制限120分</p> <!-- 試合のルールと時間制限 -->
+                        </div>
+                        
+                        <!-- 応援に関する情報 -->
+                        <div class="info-item">
+                            <h3>応援について</h3> <!-- 情報タイトル -->
+                            <p>保護者・地域の皆様の<br>温かい応援をお待ちしています</p> <!-- 応援へのお誘いメッセージ -->
+                        </div>
+                    </div> <!-- 情報グリッド終了 -->
+                </div> <!-- リーグ情報セクション終了 -->
+            </div> <!-- コンテナ終了 -->
+        </section> <!-- リーグコンテンツセクション終了 -->
+    </main> <!-- メインコンテンツ終了 -->
+
+    <!-- サイト共通のフッターセクション -->
+    <footer>
+        <div class="container">
+            <!-- 著作権情報と法的所有権の表示 -->
+            <p>&copy; 2025 西宮甲山HEROES - NextBaseballTeams. All rights reserved.</p>
+            
+            <!-- ソーシャルメディアリンク集 -->
+            <div class="social-links">
+                <a href="#">Facebook</a> <!-- Facebookページへのリンク（未実装） -->
+                <a href="#">Instagram</a> <!-- Instagramアカウントへのリンク（未実装） -->
+                <a href="#">YouTube</a> <!-- YouTubeチャンネルへのリンク（未実装） -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScriptファイルの読み込み：タブ切り替え機能等を提供 -->
+    <script src="../assets/js/script.js"></script>
+</body> <!-- body要素終了 -->
+</html> <!-- HTML文書終了 -->

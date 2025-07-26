@@ -1,0 +1,97 @@
+<!-- 活動記録ページ - 西宮甲山HEROESの活動内容を表示するページ -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- ページの基本設定 -->
+    <meta charset="UTF-8"> <!-- 文字エンコーディングをUTF-8に設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- レスポンシブデザインのためのビューポート設定 -->
+    <title>活動記録 - 西宮甲山HEROES</title> <!-- ページタイトル -->
+    <link rel="stylesheet" href="../assets/css/enhanced-styles.css"> <!-- スタイルシートの読み込み -->
+</head>
+<body>
+    <!-- ページヘッダーセクション -->
+    <header>
+        <!-- ナビゲーションメニュー -->
+        <nav>
+            <!-- ロゴセクション -->
+            <div class="logo">
+                <h1>西宮甲山HEROES</h1> <!-- チーム名 -->
+                <p>NextBaseballTeams</p> <!-- 組織名 -->
+            </div>
+            <!-- メインナビゲーションメニュー -->
+            <ul class="nav-menu">
+                <li><a href="index.html">トップページ</a></li>
+                <li><a href="activities.html" class="active">活動記録</a></li> <!-- 現在のページを示すactiveクラス -->
+                <li><a href="membership.html">会員制度</a></li>
+                <li><a href="league.html">地域リーグ戦</a></li>
+                <li><a href="news.html">ニュース</a></li>
+                <li><a href="sponsors.html">スポンサー募集</a></li>
+                <li><a href="contact.html">問合せ・リンク</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツセクション -->
+    <main>
+        <!-- ページヘッダーセクション -->
+        <section class="page-header">
+            <div class="container">
+                <h1>活動記録</h1> <!-- メインタイトル -->
+                <p>チームの活動記録をご紹介します</p> <!-- サブタイトル・説明文 -->
+            </div>
+        </section>
+
+        <!-- 活動記録コンテンツメインセクション -->
+        <section class="activities-content">
+            <div class="container">
+                <!-- カテゴリフィルターボタン -->
+                <div class="activity-categories">
+                    <button class="category-btn active" data-category="activity">活動記録</button> <!-- 現在選択中のカテゴリを示すactiveクラス -->
+                </div>
+
+                <!-- 活動記録アイテムを表示するグリッド -->
+                <div class="activities-grid">
+                    <!-- 個別の活動記録アイテム -->
+                    <article class="activity-item" data-category="activity">
+                        <!-- 活動画像セクション -->
+                        <div class="activity-image">
+                            <!-- 活動画像、エラー時はプレースホルダーSVGを表示 -->
+                            <img src="../画像/event-placeholder.jpg" alt="イベント風景" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuOCpOODmeODs+ODiOeUu+WDjzwvdGV4dD48L3N2Zz4='">
+                        </div>
+                        <!-- 活動記録のテキスト情報 -->
+                        <div class="activity-content">
+                            <h3>新年会・チーム懇親会</h3> <!-- 活動タイトル -->
+                            <p class="activity-date">2025年1月5日</p> <!-- 活動日付 -->
+                            <p>選手・保護者・コーチが一同に会し、新年の目標を共有しました。チーム結束が深まる良い機会となりました。</p> <!-- 活動説明文 -->
+                        </div>
+                    </article>
+                </div>
+
+                <!-- ユーザー投稿コンテンツセクション -->
+                <div class="upload-section">
+                    <h3>活動写真・動画の投稿</h3> <!-- 投稿セクションタイトル -->
+                    <p>メンバー・保護者の皆様からの投稿をお待ちしています</p> <!-- 投稿用の説明文 -->
+                    <button class="btn primary">写真を投稿する</button> <!-- 写真投稿ボタン -->
+                    <button class="btn secondary">動画を投稿する</button> <!-- 動画投稿ボタン -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ページフッターセクション -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 西宮甲山HEROES - NextBaseballTeams. All rights reserved.</p> <!-- コピーライト表示 -->
+            <!-- ソーシャルメディアリンク -->
+            <div class="social-links">
+                <a href="#">Facebook</a> <!-- Facebookページリンク -->
+                <a href="#">Instagram</a> <!-- Instagramページリンク -->
+                <a href="#">YouTube</a> <!-- YouTubeチャンネルリンク -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScriptファイルの読み込み、ページの動的機能を実装 -->
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

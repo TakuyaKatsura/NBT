@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!-- 
+    問合せ・リンクページ（contact.html） - 連絡先情報とお問い合わせフォームのページ
+    このページでは、西宮甲山HEROESへの各種お問い合わせ方法、アクセス情報、関連リンク、
+    よくある質問を提供します。お問い合わせフォーム、直接連絡先、地図情報、
+    外部サイトへのリンクを統合した総合的な連絡・情報ページです。
+-->
+<html lang="ja">
+<head>
+    <!-- HTMLページのメタ情報を定義 -->
+    <meta charset="UTF-8"> <!-- 文字エンコーディングをUTF-8に設定（日本語対応） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- レスポンシブデザイン対応 -->
+    <title>問合せ・リンク - 西宮甲山HEROES</title> <!-- ブラウザタブに表示されるタイトル -->
+    <link rel="stylesheet" href="../assets/css/enhanced-styles.css"> <!-- 外部CSSファイルを読み込み -->
+</head>
+<body> <!-- ページのメインコンテンツを含むbody要素 -->
+    <!-- サイト共通のヘッダーセクション -->
+    <header>
+        <!-- メインナビゲーション -->
+        <nav>
+            <!-- チームロゴと名称エリア -->
+            <div class="logo">
+                <h1>西宮甲山HEROES</h1> <!-- チーム名 -->
+                <p>NextBaseballTeams</p> <!-- 所属団体名 -->
+            </div>
+            
+            <!-- サイト内ナビゲーションメニュー -->
+            <ul class="nav-menu">
+                <li><a href="index.html">トップページ</a></li> <!-- ホームページへのリンク -->
+                <li><a href="activities.html">活動記録</a></li> <!-- チーム活動履歴ページ -->
+                <li><a href="membership.html">会員制度</a></li> <!-- 入会案内ページ -->
+                <li><a href="league.html">地域リーグ戦</a></li> <!-- 試合情報ページ -->
+                <li><a href="news.html">ニュース</a></li> <!-- 最新情報ページ -->
+                <li><a href="sponsors.html">スポンサー募集</a></li> <!-- スポンサー情報ページ -->
+                <li><a href="contact.html" class="active">問合せ・リンク</a></li> <!-- 現在のページ（activeクラスでハイライト） -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツエリア -->
+    <main>
+        <!-- ページヘッダーセクション：ページのタイトルと概要を表示 -->
+        <section class="page-header">
+            <div class="container">
+                <h1>問合せ・リンク</h1> <!-- メインページタイトル -->
+                <p>お気軽にお問い合わせください</p> <!-- ページの概要説明とウェルカムメッセージ -->
+            </div>
+        </section>
+
+        <!-- お問い合わせのメインコンテンツセクション -->
+        <section class="contact-content">
+            <div class="container">
+                <!-- お問い合わせフォームセクション：ウェブ経由での連絡手段 -->
+                <div class="contact-form-section">
+                    <h2>お問い合わせフォーム</h2> <!-- セクションタイトル -->
+                    
+                    <!-- お問い合わせフォーム：各種情報を収集 -->
+                    <form class="contact-form">
+                        <!-- お問い合わせ種別選択：問い合わせ内容をカテゴリ分け -->
+                        <div class="form-group">
+                            <label for="inquiry-type">お問い合わせ種別</label> <!-- フィールドラベル -->
+                            <select id="inquiry-type" name="inquiry-type" required> <!-- 必須選択フィールド -->
+                                <option value="">選択してください</option> <!-- デフォルト選択肢 -->
+                                <option value="membership">入会について</option> <!-- 入会関連の問い合わせ -->
+                                <option value="activities">活動について</option> <!-- 活動内容に関する問い合わせ -->
+                                <option value="sponsor">スポンサーシップ</option> <!-- スポンサー関連の問い合わせ -->
+                                <option value="general">その他</option> <!-- その他の問い合わせ -->
+                            </select>
+                        </div>
+
+                        <!-- 連絡者情報入力：2列レイアウト -->
+                        <div class="form-row">
+                            <!-- お名前入力フィールド（必須） -->
+                            <div class="form-group">
+                                <label for="name">お名前 <span class="required">*</span></label> <!-- 必須マーク付きラベル -->
+                                <input type="text" id="name" name="name" required> <!-- テキスト入力（必須） -->
+                            </div>
+                            
+                            <!-- メールアドレス入力フィールド（必須） -->
+                            <div class="form-group">
+                                <label for="email">メールアドレス <span class="required">*</span></label> <!-- 必須マーク付きラベル -->
+                                <input type="email" id="email" name="email" required> <!-- メール形式入力（必須） -->
+                            </div>
+                        </div>
+
+                        <!-- 任意の連絡先情報：2列レイアウト -->
+                        <div class="form-row">
+                            <!-- 電話番号入力フィールド（任意） -->
+                            <div class="form-group">
+                                <label for="phone">電話番号</label> <!-- フィールドラベル -->
+                                <input type="tel" id="phone" name="phone"> <!-- 電話番号入力（任意） -->
+                            </div>
+                            
+                            <!-- 所属・団体名入力フィールド（任意） -->
+                            <div class="form-group">
+                                <label for="organization">所属・団体名</label> <!-- フィールドラベル -->
+                                <input type="text" id="organization" name="organization"> <!-- テキスト入力（任意） -->
+                            </div>
+                        </div>
+
+                        <!-- 件名入力フィールド（必須） -->
+                        <div class="form-group">
+                            <label for="subject">件名 <span class="required">*</span></label> <!-- 必須マーク付きラベル -->
+                            <input type="text" id="subject" name="subject" required> <!-- テキスト入力（必須） -->
+                        </div>
+
+                        <!-- メッセージ本文入力フィールド（必須） -->
+                        <div class="form-group">
+                            <label for="message">メッセージ <span class="required">*</span></label> <!-- 必須マーク付きラベル -->
+                            <textarea id="message" name="message" rows="6" required placeholder="お問い合わせ内容をご記入ください"></textarea> <!-- 複数行テキスト入力（必須） -->
+                        </div>
+
+                        <!-- プライバシーポリシー同意チェックボックス（必須） -->
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" name="privacy" required> <!-- チェックボックス（必須） -->
+                                <span class="checkmark"></span> <!-- カスタムチェックマーク -->
+                                プライバシーポリシーに同意します <!-- 同意文 -->
+                            </label>
+                        </div>
+
+                        <!-- フォーム送信ボタン -->
+                        <button type="submit" class="btn primary large">送信する</button>
+                    </form>
+                </div>
+
+                <!-- 直接お問い合わせセクション：フォーム以外の連絡手段 -->
+                <div class="contact-info-section">
+                    <h2>直接お問い合わせ</h2> <!-- セクションタイトル -->
+                    
+                    <!-- 各種連絡方法の一覧 -->
+                    <div class="contact-methods">
+                        <!-- 電話での連絡方法 -->
+                        <div class="contact-method">
+                            <h3>電話でのお問い合わせ</h3> <!-- 連絡手段タイトル -->
+                            <p class="contact-detail">090-XXXX-XXXX</p> <!-- 電話番号（プレースホルダー） -->
+                            <p class="contact-note">受付時間：平日 9:00-17:00</p> <!-- 受付時間の明示 -->
+                        </div>
+
+                        <!-- メールでの連絡方法 -->
+                        <div class="contact-method">
+                            <h3>メールでのお問い合わせ</h3> <!-- 連絡手段タイトル -->
+                            <p class="contact-detail">info@nishinomiya-heroes.jp</p> <!-- メールアドレス（プレースホルダー） -->
+                            <p class="contact-note">24時間受付（返信は翌営業日以降）</p> <!-- 対応時間の説明 -->
+                        </div>
+
+                        <!-- 練習見学・体験参加の案内 -->
+                        <div class="contact-method">
+                            <h3>練習見学・体験</h3> <!-- 連絡手段タイトル -->
+                            <p class="contact-detail">甲山球場</p> <!-- 場所情報 -->
+                            <p class="contact-note">毎週土・日曜日 9:00-12:00</p> <!-- 見学可能時間 -->
+                            <p class="contact-note">※事前にご連絡いただけると安心です</p> <!-- 注意事項 -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- アクセス・練習場所案内セクション -->
+                <div class="map-section">
+                    <h2>アクセス・練習場所</h2> <!-- セクションタイトル -->
+                    
+                    <!-- 所在地情報とアクセス案内 -->
+                    <div class="location-info">
+                        <!-- 詳細な住所とアクセス情報 -->
+                        <div class="location-details">
+                            <h3>甲山球場</h3> <!-- 施設名 -->
+                            <p class="address">〒662-0001 兵庫県西宮市甲山町XX-XX</p> <!-- 住所（プレースホルダー） -->
+                            
+                            <!-- 交通アクセス情報 -->
+                            <div class="access-info">
+                                <h4>アクセス</h4> <!-- アクセス情報見出し -->
+                                <ul>
+                                    <li>阪急甲陽線「甲陽園駅」から徒歩15分</li> <!-- 電車でのアクセス -->
+                                    <li>阪神バス「甲山大師前」下車 徒歩5分</li> <!-- バスでのアクセス -->
+                                    <li>駐車場：20台完備</li> <!-- 駐車場情報 -->
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- 地図表示エリア（プレースホルダー） -->
+                        <div class="map-placeholder">
+                            <div class="map-content">
+                                <p>地図表示エリア</p> <!-- 地図プレースホルダー -->
+                                <small>Google Maps等を埋め込み予定</small> <!-- 実装予定の説明 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 関連リンクセクション：外部サイトや関連情報へのリンク集 -->
+                <div class="links-section">
+                    <h2>関連リンク</h2> <!-- セクションタイトル -->
+                    
+                    <!-- リンクをカテゴリ別にグリッド表示 -->
+                    <div class="links-grid">
+                        <!-- 公式SNSリンク集 -->
+                        <div class="link-category">
+                            <h3>公式SNS</h3> <!-- カテゴリタイトル -->
+                            <ul class="link-list">
+                                <li><a href="#" target="_blank">Facebook</a></li> <!-- Facebook（新しいタブで開く） -->
+                                <li><a href="#" target="_blank">Instagram</a></li> <!-- Instagram（新しいタブで開く） -->
+                                <li><a href="#" target="_blank">YouTube</a></li> <!-- YouTube（新しいタブで開く） -->
+                                <li><a href="#" target="_blank">Twitter</a></li> <!-- Twitter（新しいタブで開く） -->
+                            </ul>
+                        </div>
+
+                        <!-- 関連団体リンク集 -->
+                        <div class="link-category">
+                            <h3>関連団体</h3> <!-- カテゴリタイトル -->
+                            <ul class="link-list">
+                                <li><a href="#" target="_blank">NextBaseballTeams（NBT）</a></li> <!-- 親団体 -->
+                                <li><a href="#" target="_blank">阪神地区少年野球連盟</a></li> <!-- 所属連盟 -->
+                                <li><a href="#" target="_blank">西宮市少年野球協会</a></li> <!-- 地域協会 -->
+                                <li><a href="#" target="_blank">兵庫県軟式野球連盟</a></li> <!-- 県連盟 -->
+                            </ul>
+                        </div>
+
+                        <!-- 地域情報リンク集 -->
+                        <div class="link-category">
+                            <h3>地域情報</h3> <!-- カテゴリタイトル -->
+                            <ul class="link-list">
+                                <li><a href="#" target="_blank">西宮市公式サイト</a></li> <!-- 市の公式サイト -->
+                                <li><a href="#" target="_blank">甲山森林公園</a></li> <!-- 地域の公園情報 -->
+                                <li><a href="#" target="_blank">西宮市スポーツ施設案内</a></li> <!-- スポーツ施設情報 -->
+                                <li><a href="#" target="_blank">地域イベント情報</a></li> <!-- 地域イベント -->
+                            </ul>
+                        </div>
+
+                        <!-- その他の関連リンク -->
+                        <div class="link-category">
+                            <h3>その他</h3> <!-- カテゴリタイトル -->
+                            <ul class="link-list">
+                                <li><a href="#">プライバシーポリシー</a></li> <!-- プライバシーポリシー -->
+                                <li><a href="#">サイトマップ</a></li> <!-- サイトマップ -->
+                                <li><a href="#">よくある質問</a></li> <!-- FAQ -->
+                                <li><a href="#">お問い合わせ履歴</a></li> <!-- 問い合わせ履歴 -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- よくある質問（FAQ）セクション -->
+                <div class="faq-section">
+                    <h2>よくある質問</h2> <!-- セクションタイトル -->
+                    
+                    <!-- FAQ項目のリスト -->
+                    <div class="faq-list">
+                        <!-- FAQ項目1：入会に関する質問 -->
+                        <div class="faq-item">
+                            <h3>野球経験がなくても入会できますか？</h3> <!-- 質問 -->
+                            <p>はい、野球経験は不問です。基礎から丁寧に指導いたします。</p> <!-- 回答 -->
+                        </div>
+                        
+                        <!-- FAQ項目2：見学に関する質問 -->
+                        <div class="faq-item">
+                            <h3>練習の見学はできますか？</h3> <!-- 質問 -->
+                            <p>はい、いつでも見学可能です。事前にご連絡いただけると安心です。</p> <!-- 回答 -->
+                        </div>
+                        
+                        <!-- FAQ項目3：費用に関する質問 -->
+                        <div class="faq-item">
+                            <h3>月会費以外に費用はかかりますか？</h3> <!-- 質問 -->
+                            <p>ユニフォーム代、保険料等が別途必要です。詳細はお問い合わせください。</p> <!-- 回答 -->
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- コンテナ終了 -->
+        </section> <!-- コンタクトコンテンツセクション終了 -->
+    </main> <!-- メインコンテンツ終了 -->
+
+    <!-- サイト共通のフッターセクション -->
+    <footer>
+        <div class="container">
+            <!-- 著作権情報と法的所有権の表示 -->
+            <p>&copy; 2025 西宮甲山HEROES - NextBaseballTeams. All rights reserved.</p>
+            
+            <!-- ソーシャルメディアリンク集 -->
+            <div class="social-links">
+                <a href="#">Facebook</a> <!-- Facebookページへのリンク（未実装） -->
+                <a href="#">Instagram</a> <!-- Instagramアカウントへのリンク（未実装） -->
+                <a href="#">YouTube</a> <!-- YouTubeチャンネルへのリンク（未実装） -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScriptファイルの読み込み：フォーム検証やインタラクティブ機能を提供 -->
+    <script src="../assets/js/script.js"></script>
+</body> <!-- body要素終了 -->
+</html> <!-- HTML文書終了 -->
