@@ -10,7 +10,7 @@
     <meta charset="UTF-8"> <!-- 文字エンコーディングをUTF-8に設定（日本語対応） -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- レスポンシブデザイン対応のビューポート設定 -->
     <title>西宮甲山HEROES - NBT公式サイト</title> <!-- ブラウザのタブに表示されるページタイトル -->
-    <link rel="stylesheet" href="../assets/css/enhanced-styles.css"> <!-- 外部CSSファイルを読み込み -->
+    <link rel="stylesheet" href="assets/css/enhanced-styles.css"> <!-- 外部CSSファイルを読み込み -->
 </head>
 <body>
     <!-- ページ全体のコンテンツを囲むbody要素 -->
@@ -29,11 +29,12 @@
             <ul class="nav-menu">
                 <li><a href="index.html">トップページ</a></li> <!-- 現在のページ（ホーム） -->
                 <li><a href="activities.html">活動記録</a></li> <!-- チームの活動履歴ページ -->
-                <li><a href="membership.html">会員制度</a></li> <!-- 入会・会員情報ページ -->
-                <li><a href="league.html">地域リーグ戦</a></li> <!-- 試合スケジュールと結果ページ -->
-                <li><a href="news.html">ニュース</a></li> <!-- 最新情報・お知らせページ -->
-                <li><a href="sponsors.html">スポンサー募集</a></li> <!-- スポンサーシップ案内ページ -->
-                <li><a href="contact.html">問合せ・リンク</a></li> <!-- 連絡先・関連リンクページ -->
+                <li><a href="pages/activities.html">活動記録</a></li>
+                <li><a href="pages/membership.html">会員制度</a></li> <!-- 入会・会員情報ページ -->
+                <li><a href="pages/league.html">地域リーグ戦</a></li> <!-- 試合スケジュールと結果ページ -->
+                <li><a href="pages/news.html">ニュース</a></li> <!-- 最新情報・お知らせページ -->
+                <li><a href="pages/sponsors.html">スポンサー募集</a></li> <!-- スポンサーシップ案内ページ -->
+                <li><a href="pages/contact.html">問合せ・リンク</a></li> <!-- 連絡先・関連リンクページ -->
             </ul>
         </nav>
     </header>
@@ -48,7 +49,7 @@
                 
                 <!-- 主要なアクション（CTA：Call To Action）ボタンエリア -->
                 <div class="cta-buttons">
-                    <a href="membership.html" class="btn primary">入会案内</a> <!-- 最も重要なアクション：入会への導線 -->
+                    <a href="pages/membership.html" class="btn primary">入会案内</a> <!-- 最も重要なアクション：入会への導線 -->
                     <a href="activities.html" class="btn secondary">活動記録を見る</a> <!-- セカンダリアクション：活動内容の確認 -->
                 </div>
             </div>
@@ -74,14 +75,14 @@
                     <article class="news-item">
                         <h3>春季大会結果発表</h3> <!-- ニュースタイトル -->
                         <p>地域リーグ戦での好成績を収めました</p> <!-- ニュース概要 -->
-                        <a href="news.html">詳細を見る</a> <!-- 詳細ページへのリンク -->
+                        <a href="pages/news.html">詳細を見る</a> <!-- 詳細ページへのリンク -->
                     </article>
                     
                     <!-- 個別のニュース記事：メンバー募集 -->
                     <article class="news-item">
                         <h3>新メンバー募集中</h3> <!-- ニュースタイトル -->
                         <p>小学生の新メンバーを募集しています</p> <!-- ニュース概要 -->
-                        <a href="membership.html">詳細を見る</a> <!-- 会員制度ページへのリンク -->
+                        <a href="pages/membership.html">詳細を見る</a> <!-- 会員制度ページへのリンク -->
                     </article>
                     
                     <!-- 個別のニュース記事：練習試合報告 -->
@@ -111,6 +112,6 @@
     </footer>
 
     <!-- JavaScriptファイルの読み込み：インタラクティブ機能を提供 -->
-    <script src="../assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
