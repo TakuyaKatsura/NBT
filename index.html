@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- 
+    メインページ（index.html） - 西宮甲山HEROESの公式ウェブサイトのトップページ
+    このページは一般社団法人NextBaseballTeams（NBT）の西宮甲山HEROESチームの顔となるページです。
+    チームの概要、理念、最新情報を訪問者に分かりやすく提示する役割を持ちます。
+-->
+<html lang="ja">
+<head>
+    <!-- HTMLページのメタ情報を定義するhead要素 -->
+    <meta charset="UTF-8"> <!-- 文字エンコーディングをUTF-8に設定（日本語対応） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- レスポンシブデザイン対応のビューポート設定 -->
+    <title>西宮甲山HEROES - NBT公式サイト</title> <!-- ブラウザのタブに表示されるページタイトル -->
+    <link rel="stylesheet" href="../assets/css/enhanced-styles.css"> <!-- 外部CSSファイルを読み込み -->
+</head>
+<body>
+    <!-- ページ全体のコンテンツを囲むbody要素 -->
+    
+    <!-- ページ上部のヘッダーセクション：サイト全体で共通の要素 -->
+    <header>
+        <!-- サイト内ナビゲーションを提供するnav要素 -->
+        <nav>
+            <!-- チームロゴとサイト名を表示するロゴエリア -->
+            <div class="logo">
+                <h1>西宮甲山HEROES</h1> <!-- メインのチーム名 -->
+                <p>NextBaseballTeams</p> <!-- 所属団体名 -->
+            </div>
+            
+            <!-- サイト内の主要ページへのナビゲーションメニュー -->
+            <ul class="nav-menu">
+                <li><a href="index.html">トップページ</a></li> <!-- 現在のページ（ホーム） -->
+                <li><a href="activities.html">活動記録</a></li> <!-- チームの活動履歴ページ -->
+                <li><a href="membership.html">会員制度</a></li> <!-- 入会・会員情報ページ -->
+                <li><a href="league.html">地域リーグ戦</a></li> <!-- 試合スケジュールと結果ページ -->
+                <li><a href="news.html">ニュース</a></li> <!-- 最新情報・お知らせページ -->
+                <li><a href="sponsors.html">スポンサー募集</a></li> <!-- スポンサーシップ案内ページ -->
+                <li><a href="contact.html">問合せ・リンク</a></li> <!-- 連絡先・関連リンクページ -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツエリア：ページ固有の内容を含む -->
+    <main>
+        <!-- ヒーローセクション：訪問者が最初に目にする印象的な導入部分 -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>一般社団法人NextBaseballTeams</h2> <!-- 正式な団体名を大きく表示 -->
+                <p>地域密着型の少年野球チームとして、子どもたちの成長を支援します</p> <!-- チームのミッション文 -->
+                
+                <!-- 主要なアクション（CTA：Call To Action）ボタンエリア -->
+                <div class="cta-buttons">
+                    <a href="membership.html" class="btn primary">入会案内</a> <!-- 最も重要なアクション：入会への導線 -->
+                    <a href="activities.html" class="btn secondary">活動記録を見る</a> <!-- セカンダリアクション：活動内容の確認 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- NBT理念セクション：団体の理念と目標を説明 -->
+        <section class="nbt-philosophy">
+            <div class="container"> <!-- レイアウト調整用のコンテナ -->
+                <h2>NBT理念</h2> <!-- セクションタイトル -->
+                <!-- 団体の理念・目的・価値観を詳しく説明するテキスト -->
+                <p>NextBaseballTeams（NBT）は、野球を通じて地域の子どもたちの健全な育成を目指す一般社団法人です。スポーツマンシップ、チームワーク、そして地域コミュニティとの結びつきを大切にしています。</p>
+            </div>
+        </section>
+
+        <!-- 最新情報セクション：重要なニュースや更新をハイライト表示 -->
+        <section class="latest-news">
+            <div class="container">
+                <h2>最新情報</h2> <!-- セクションタイトル -->
+                
+                <!-- ニュース項目をグリッドレイアウトで表示するコンテナ -->
+                <div class="news-grid">
+                    <!-- 個別のニュース記事：spring tournament結果 -->
+                    <article class="news-item">
+                        <h3>春季大会結果発表</h3> <!-- ニュースタイトル -->
+                        <p>地域リーグ戦での好成績を収めました</p> <!-- ニュース概要 -->
+                        <a href="news.html">詳細を見る</a> <!-- 詳細ページへのリンク -->
+                    </article>
+                    
+                    <!-- 個別のニュース記事：メンバー募集 -->
+                    <article class="news-item">
+                        <h3>新メンバー募集中</h3> <!-- ニュースタイトル -->
+                        <p>小学生の新メンバーを募集しています</p> <!-- ニュース概要 -->
+                        <a href="membership.html">詳細を見る</a> <!-- 会員制度ページへのリンク -->
+                    </article>
+                    
+                    <!-- 個別のニュース記事：練習試合報告 -->
+                    <article class="news-item">
+                        <h3>練習試合開催</h3> <!-- ニュースタイトル -->
+                        <p>他チームとの練習試合を実施しました</p> <!-- ニュース概要 -->
+                        <a href="activities.html">詳細を見る</a> <!-- 活動記録ページへのリンク -->
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- サイト下部のフッターセクション：著作権情報とソーシャルリンク -->
+    <footer>
+        <div class="container">
+            <!-- 著作権表示：法的保護とブランド所有権の明示 -->
+            <p>&copy; 2025 西宮甲山HEROES - NextBaseballTeams. All rights reserved.</p>
+            
+            <!-- ソーシャルメディアリンク：外部プラットフォームでの情報発信 -->
+            <div class="social-links">
+                <a href="#">Facebook</a> <!-- Facebookページへのリンク（未実装） -->
+                <a href="#">Instagram</a> <!-- Instagramアカウントへのリンク（未実装） -->
+                <a href="#">YouTube</a> <!-- YouTubeチャンネルへのリンク（未実装） -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScriptファイルの読み込み：インタラクティブ機能を提供 -->
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
